@@ -5,11 +5,14 @@ import mongoose from 'mongoose';
 import multer from 'multer';
 import AWS from 'aws-sdk';
 import Uploads from './models/Uploads.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const s3 = new AWS.S3({
-    accessKeyId: 'AKIAS6MKVEF3MGZFMBFP',
-    secretAccessKey: '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',
-    region: 'ap-south-1'
+    accessKeyId: process.env.ACCESS_KEY_ID,
+    secretAccessKey: process.env.SECRET_ACCESS_KEY,
+    region: process.env.REGION
 });
 
 const MONGODB_URI = "mongodb+srv://abhinabroy2001:awOjlddyoig1TOrL@upload-demo.vu8t0sm.mongodb.net/uploadDemo"
